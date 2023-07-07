@@ -4,12 +4,6 @@ namespace App\Shipment;
 
 use Doctrine\ORM\EntityManager;
 
-/**
- * Example tasks:
- * 1. Do a code review - what should be changed?
- * 2. How do You handle new transport type? e.g DHL or personal collection.
- * 3. Could You define cases we should cover with unit tests?
- */
 class ShipmentController
 {
     private EntityManager $em;
@@ -70,6 +64,6 @@ class ShipmentController
     private function generateDpd($shipment, $options): array
     {
         // Imagine that there is some integration logic for DPD with some extra params that DPD needed.
-        return ['waybill_no' => '12345'];
+        return ['waybill_no' => '12345', 'expected_delivery_time' => '2023-01-01'];
     }
 }
